@@ -98,7 +98,7 @@ const sendHourlyReport = async (req, res) => {
                     }
 
                     const link = `https://localhost:3030/user/report/${countHour}`
-                    Hourreport(`Action needed!!! Here is your hourly report link: ${link} See to save your bill`)
+                    Hourreport(`Action needed!!! Here is your hourly report link: ${link} See to save your bill` , userdata.phone_number)
                 }
             }
             else {

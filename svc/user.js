@@ -28,7 +28,7 @@ async function createUser(userData) {
     // Create the user in the database
     try {
         const newUser = await userRepo.createUser(userData);
-        SuccessMessage("successfully signed up")
+        SuccessMessage("successfully signed up", userData.phone_number)
         console.log("user created : " , newUser)
   return ;
 } catch (error) {

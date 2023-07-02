@@ -40,7 +40,7 @@ const CheckFeasibility = (userdata) => {
     const practical_bill = units * Unit_price
     console.log(practical_bill)
     if (practical_bill - userdata.bill <= 50) {
-       SuccessMessage("Congratulations! You have successfully subscribed to bill optimization!")
+       SuccessMessage("Congratulations! You have successfully subscribed to bill optimization!" , userdata.phone_number)
         return {"userbill" : userdata.bill , "our bill": practical_bill , "msg" : "your bill will be optimized"}
     } 
     const extra_per_day_power = (((practical_bill - userdata.bill) / Unit_price) * 1000) / 30;
@@ -76,11 +76,11 @@ const CheckLimit = ( userData , hourdata , total , currUsed) => {
         }
     }
     if (fault) {
-        Alert("Please check your " + name + " it is faulted")
+        Alert("Please check your " + name + " it is faulted" , userData.phone_number)
         return { value: false, appliance: name , faulted:true } ;
     }
     if (total > limit_power || total_power_of_appliance_per_day < hourdata.usage.power) {
-        Alert("Please check your " + name + " it is taking more than expected")
+        Alert("Please check your " + name + " it is taking more than expected" , userData.phone_number)
         return { value: false, appliance: name , faulted : false} ;
     }
     return { value: true, appliance: name , faulted: false } ;

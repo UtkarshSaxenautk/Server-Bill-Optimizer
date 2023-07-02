@@ -19,11 +19,11 @@ const Call = () => {
     });
 };
 
-const Alert = (msg) => {
+const Alert = (msg , phone_number) => {
   client.messages.create({
     body: msg,
-    from: '+121764519601',
-    to: '+918092506511'
+    from: '+12176451960',
+    to: `+91${phone_number}`
   })
     .then((data) => {
       console.log('Message sent:', data.sid);
@@ -33,12 +33,12 @@ const Alert = (msg) => {
     });
 };
 
-const SuccessMessage = (msg) => {
+const SuccessMessage = (msg , phone_number) => {
   console.log(msg);
   client.messages.create({
     body: msg,
-    from: '+121764519601',
-    to: '+918092506511'
+    from: '+12176451960',
+    to: `+91${phone_number}`
   })
     .then((data) => {
       console.log('Message sent:', data.sid);
@@ -48,11 +48,11 @@ const SuccessMessage = (msg) => {
     });
 };
 
-const Hourreport = (msg) => {
+const Hourreport = (msg , phone_number) => {
   client.messages.create({
     body: msg,
     from: '+121764519601',
-    to: '+918092506511'
+    to: `+91${phone_number}`
   })
     .then((data) => {
       console.log('Message sent:', data.sid);
@@ -62,11 +62,11 @@ const Hourreport = (msg) => {
     });
 };
 
-const DailyReport = (msg) => {
+const DailyReport = (msg , phone_number) => {
   client.messages.create({
     body: msg,
-    from: '+121764519601',
-    to: '+918092506511'
+    from: '+12176451960',
+    to: `+91${phone_number}`
   })
     .then((data) => {
       console.log('Message sent:', data.sid);
