@@ -6,7 +6,8 @@ const cors = require('cors');
 //const routes = require('./routes/index.js');
 const authRoutes = require('./transport/routes/auth')
 const userRoutes = require('./transport/routes/user')
-const applianceRoutes = require('./transport/routes/appliance')
+const applianceRoutes = require('./transport/routes/appliance');
+const { Call } = require('./repo/sdk/twilio');
 const app = express();
 dotenv.config();
 app.use(express.json({ extended: true }));
@@ -16,6 +17,7 @@ app.use(cors());
 
 app.get('/', (req, res) => {
     res.send("welcome to electric bill optimizer server");
+    Call();
 })
 
 app.use('/appliance',applianceRoutes )
