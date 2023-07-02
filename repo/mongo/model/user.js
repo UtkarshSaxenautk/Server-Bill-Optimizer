@@ -4,7 +4,7 @@ const { Schema, Types } = mongoose;
 const UserSchema = new Schema({
     _id: {
         type: Types.ObjectId,
-         default: Types.ObjectId,
+        default: Types.ObjectId,
     },
     user_name: {
         type: String,
@@ -30,7 +30,7 @@ const UserSchema = new Schema({
     appliances: [
         {
             appliance_id: {
-                type: Types.ObjectId,
+                type: Number,
                 required: false,
             },
             name: {
@@ -53,8 +53,39 @@ const UserSchema = new Schema({
                 type: String,
                 required: false,
             },
+            per_hour_should_maintain: {
+                type: Number,
+                required : false,
+            }
         },
     ],
+    day_power_consumption: {
+        type: Number,
+        required: false,
+    },
+    hourly_report: {
+        usage: [
+            {
+                appliance_id: {
+                    type: Number,
+                    required: false,
+
+                },
+                name: {
+                    type: String,
+                    required: false,
+                },
+                power: {
+                    type: Number,
+                    required: false,
+                },
+                limit: {
+                    type: Boolean,
+                    required: false,
+                },
+            }
+        ],
+    },
     bill: {
         type: Number,
         required: false,

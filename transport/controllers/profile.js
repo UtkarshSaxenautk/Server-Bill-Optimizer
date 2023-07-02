@@ -16,6 +16,10 @@ async function updateUserProfile(req, res) {
   }
 }
 
+async function sendHourlyUpdate(req, res) {
+
+}
+
 module.exports = {
   updateUserProfile,
 };

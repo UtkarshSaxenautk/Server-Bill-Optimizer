@@ -1,7 +1,7 @@
 const applianceService = require('../../svc/applianceitem')
 
 async function readAppliance(req, res) {
-  const { name } = req.body;
+  const name =  req.params.name
   if (name === "" )  {
      return res.status(400).json({ message: 'Bad Request' });
   } 

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const { Schema, Types } = mongoose;
 
-const HourReportSchema = new mongoose.Schema({
+const HourReportSchema = Schema({
     user_id: {
         type: Types.ObjectId,
         required: true,

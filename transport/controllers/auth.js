@@ -1,7 +1,7 @@
 const userService = require('../../svc/user')
 const jwt = require('jsonwebtoken');
 const { cache } = require('../../repo/cache/cache');
-
+const bcrypt = require('bcryptjs');
 
 async function registerUser(req, res) {
   const { user_name, email , password } = req.body;
