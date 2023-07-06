@@ -1,6 +1,6 @@
 //const twilio = require('twilio');
-const accountSid = 'AC1517122a4a2b63954e7eb75b76a12dae'; // Your Account SID from www.twilio.com/console
-const authToken = 'aa10aaa91e9afa1a1cce44d96ab0fcda'; // Your Auth Token from www.twilio.com/console
+const accountSid = 'constant'; // Your Account SID from www.twilio.com/console
+const authToken = 'constant'; // Your Auth Token from www.twilio.com/console
 const parsePhoneNumber = require('libphonenumber-js');
 const client = require("twilio")(accountSid, authToken);
 
