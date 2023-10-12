@@ -11,7 +11,7 @@ const { Call } = require('./repo/sdk/twilio');
 const app = express();
 dotenv.config();
 const corsOptions = {
-  origin: 'https://electric-bill-optimizer.netlify.app/*',
+  origin: '*',
 };
 
 app.use(cors(corsOptions));
