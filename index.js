@@ -10,9 +10,14 @@ const applianceRoutes = require('./transport/routes/appliance');
 const { Call } = require('./repo/sdk/twilio');
 const app = express();
 dotenv.config();
+app.use(cors({
+  origin: 'http://your-frontend-app-domain.com',
+  methods: 'GET,POST',
+  credentials: true, // If you need to handle cookies
+}));
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+
 
 
 app.get('/', (req, res) => {
