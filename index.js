@@ -10,7 +10,11 @@ const applianceRoutes = require('./transport/routes/appliance');
 const { Call } = require('./repo/sdk/twilio');
 const app = express();
 dotenv.config();
-app.use(cors({ origin: '*' }));
+const corsOptions = {
+  origin: 'https://electric-bill-optimizer.netlify.app',
+};
+
+app.use(cors(corsOptions));
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 
